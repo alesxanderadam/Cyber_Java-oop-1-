@@ -23,14 +23,17 @@ public class List_Students {
             System.out.println(student);
         }
     }
-    public void getStdudentById(String st){
-        for (Student student: lst_student) {
-          if(student.getStudent_id().indexOf(st) > 0){
-            System.out.println(student);
-          }else{
-              System.out.println("Student id not found!");
-              return;
-          }
+    public void getStdudentById(String st) {
+        boolean found = false;
+        for (Student student : lst_student) {
+            if (student.getStudent_id().contains(st)) {
+                System.out.println(student);
+                found = true;
+            }
+        }
+        if (!found) {
+            System.out.println("Student id not found!");
         }
     }
+
 }

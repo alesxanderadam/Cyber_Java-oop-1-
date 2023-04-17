@@ -16,27 +16,27 @@ public class Student_Management {
         do{
             System.out.println("-------------------Menu-------------------");
             System.out.println("1. Enter information student: \n");
-            System.out.println("1. Print list student: \n");
+            System.out.println("2. Print list student: \n");
             System.out.println("2. Get student by id: \n");
             choice = scanner.nextInt();
             scanner.nextLine();
             if(choice == 1){
                 while (true) {
-                    System.out.println("=== Nhập thông tin sinh viên ===");
-                    System.out.print("Mã sinh viên: ");
+                    System.out.println("=== Enter information student ===");
+                    System.out.print("Student id: ");
                     String student_id = scanner.nextLine();
 
-                    System.out.print("Họ tên sinh viên: ");
+                    System.out.print("Student name: ");
                     String student_name = scanner.nextLine();
 
-                    System.out.print("Giới tính (Nam/Nữ): ");
+                    System.out.print("Gender (Boy / Girl): ");
                     String genderStr = scanner.nextLine();
                     boolean gender = false;
-                    if (genderStr.equalsIgnoreCase("Nam")) {
+                    if (genderStr.equalsIgnoreCase("Boy")) {
                         gender = true;
                     }
 
-                    System.out.print("Ngày sinh (dd/MM/yyyy): ");
+                    System.out.print("Date (dd/MM/yyyy): ");
                     String dateStr = scanner.nextLine();
                     Date birth_of_date = null;
                     try{
@@ -49,14 +49,14 @@ public class Student_Management {
                     Student student = new Student(student_id, student_name, gender, birth_of_date);
 
                     for (int i = 0; i < 3; i++) {
-                        System.out.println("Nhập điểm môn học thứ " + (i+1));
+                        System.out.println("Enter the score of the subject  " + (i+1));
                         Score score = Score.inputScores(scanner);
                         student.addScore(score);
                     }
 
                     list_students.addStuden(student);
 
-                    System.out.print("Bạn có muốn nhập tiếp không? (Y/N): ");
+                    System.out.print("Do you want to continue? (Y/N): ");
                     String answer = scanner.nextLine();
                     if (answer.equalsIgnoreCase("N")) {
                         break;

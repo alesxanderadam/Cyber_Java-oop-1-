@@ -58,13 +58,13 @@ public class Score {
     }
 
     public void calculateClassification(float avg) {
-        if (avg >= 8.5) setRank("Giỏi");
+        if (avg >= 8.5) setRank("Very good");
         else if (avg >= 7.0 && avg < 8.5) {
-            setRank("Khá");
+            setRank("Good");
         } else if (avg >= 5.0 && avg < 7.0) {
-            setRank("Trung Bình");
+            setRank("Not bad");
         } else {
-            setRank("Yếu");
+            setRank("Bad");
         }
     }
 }
